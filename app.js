@@ -1,7 +1,7 @@
 const main = document.querySelector(".main");
 const searchTxt = document.querySelector(".search");
 const searchBtn = document.querySelector("#searchBtn");
-const infoHead = document.querySelector('#info');
+const infoHead = document.querySelector("#info");
 
 searchBtn.addEventListener("click", searchMovie);
 
@@ -16,13 +16,11 @@ getApi(APIURL);
 async function getApi(url) {
   const res = await fetch(url);
   const resData = await res.json();
-  console.log(resData);
-
   getDesign(resData);
 }
 
 function getDesign(resData) {
-  main.innerHTML = '';
+  main.innerHTML = "";
 
   resData.results.forEach((element) => {
     const { poster_path, title, vote_average } = element;
@@ -31,7 +29,9 @@ function getDesign(resData) {
     movieEl.innerHTML = `<img src="${imgPath + poster_path}" alt="" id="img">
                                <div class="movieInfo">
                                      <h3>${title}</h3>
-                                    <span>${vote_average}</span>
+                                    <span class="${ratingColor(
+                                      vote_average
+                                    )}">${vote_average}</span>
                                 </div>`;
 
     main.appendChild(movieEl);
@@ -39,14 +39,24 @@ function getDesign(resData) {
 }
 
 function searchMovie() {
-    console.log('click');
+  console.log("click");
   let searchTerm = searchTxt.value;
   if (searchTerm) {
     getApi(SEARCHAPI + searchTerm);
   }
 
-  infoHead.innerText = "Searched results for " + searchTerm + '...';
-  infoHead.style.color = 'gray';
+  infoHead.innerText = "Searched results for " + searchTerm + "...";
+  infoHead.style.color = "gray";
 
-  searchTxt.value = '';
+  searchTxt.value = "";
+}
+
+function ratingColor(vote_average) {
+  if (vote_average >= 8) {
+    return "green";
+  } else if (vote_average >= 5) {
+    return "orange";
+  } else {
+    return "red";
+  }
 }
