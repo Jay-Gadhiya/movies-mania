@@ -8,69 +8,65 @@ body {
 /* navigation manu */
 
 header {
-    height: auto;
-    text-align: center;
+  height: auto;
+  text-align: center;
 }
 
 .nav {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; 
-    padding: 0 1rem;
-    background-color: rgb(58, 51, 153);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+  background-color: rgb(58, 51, 153);
 }
 
-h2{
-    color: white;
-    font-family: 'Poppins', sans-serif;
+h2 {
+  color: white;
+  font-family: "Poppins", sans-serif;
 }
 
 .nav input {
-    height: 30px;
-    padding: 0 1rem;
-    border-radius: 4px;
-    border-style: none;
-    margin-top: 1.4rem;
-    
+  height: 30px;
+  padding: 0 1rem;
+  border-radius: 4px;
+  border-style: none;
+  margin-top: 1.4rem;
 }
-
 
 .search:focus {
-    outline: none;
-} 
+  outline: none;
+}
 .search::placeholder {
-    color: #7378c5;
+  color: #7378c5;
 }
 
-#searchBtn{
-    height: 30px;
-    padding: 0 1rem;
-    border-radius: 4px;
-    border-style: none;
-    cursor: pointer;
-    margin-top: 1.4rem;
-    margin-right: 2.1rem;
-    
-
+#searchBtn {
+  height: 30px;
+  padding: 0 1rem;
+  border-radius: 4px;
+  border-style: none;
+  cursor: pointer;
+  margin-top: 1.4rem;
+  margin-right: 2.1rem;
 }
 /* info */
 .infoHead {
-text-align: center;
-color: white;
-font-size: 25px;
+  text-align: center;
+  color: white;
+  font-size: 25px;
 }
 
 .infoHead hr {
-    width: 50%;
-    border: 1px solid gray;
+  width: 50%;
+  border: 1px solid gray;
 }
 
 /* body main */
 .main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    /* align-items: center; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* align-items: center; */
 }
 
 /* Image and background of image */
@@ -79,8 +75,6 @@ font-size: 25px;
   height: 250px;
   background-size: cover;
 }
-
-
 
 .movie {
   /* border:2px solid black; */
@@ -101,11 +95,106 @@ font-size: 25px;
   align-items: center;
   padding: 0 0.6rem;
   font-size: small;
-/* navigation manu */
+  /* navigation manu */
 }
 
 span {
   background-color: navy;
   padding: 0.2rem;
   border-radius: 4px;
+}
+
+.green {
+  color: green;
+  font-weight: bold;
+}
+
+.orange {
+  font-weight: bold;
+  color: orange;
+}
+
+.red {
+  color: red;
+  font-weight: bold;
+}
+
+/* for responsiveness */
+
+@media only screen and (max-width: 400px) {
+  #img {
+    width: 80px;
+    height: 120px;
+    background-size: cover;
+  }
+
+  .movie {
+    /* border:2px solid black; */
+    max-width: 80px;
+    height: 160px;
+    margin: 1rem;
+    background-color: rgb(91, 91, 172);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 8px;
+    color: white;
+    overflow: hidden;
+  }
+
+  .movieInfo {
+    display: flex;
+    justify-content: space-between;
+    /* padding: 1rem; */
+    align-items: center;
+    padding: 0 0.5rem;
+    font-size: 5px;
+    /* navigation manu */
+  }
+
+  span {
+    background-color: navy;
+    padding: 0px 2px;
+    padding-bottom: 1px;
+    padding-top: 2px;
+    border-radius: 2px;
+    font-size: 5px;
+  }
+
+  /* info */ 
+
+  #info {
+    font-size: 20px;
+  }
+
+
+  /* nav items */
+  h2 {
+    font-size: 15px;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    margin-top: 20px;
+  }
+  
+  .nav input {
+    width: 70px;
+    height: 20px;
+    padding: 0 1rem;
+    border-radius: 3px;
+    border-style: none;
+    margin-bottom: 20px;
+    font-size: 9px;
+  }
+
+  #searchBtn {
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    border-radius: 4px;
+    border-style: none;
+    cursor: pointer;
+    /* margin-top: 1px; */
+    margin-right: 1px;
+    font-size: 9px;
+
+  }
+
 }
